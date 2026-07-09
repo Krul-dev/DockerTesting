@@ -1,0 +1,54 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Docker Compose overrides and generated files
+docker-compose.override.yml
+compose.override.yml
+*.pid
+
+# Docker volumes, bind mounts, and runtime data
+data/
+volumes/
+tmp/
+temp/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories commonly created while experimenting
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Build and coverage output
+build/
+dist/
+target/
+coverage/
+.pytest_cache/
+.mypy_cache/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+.idea/
+
+# Archives and packaged artifacts
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
