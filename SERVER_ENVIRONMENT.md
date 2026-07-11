@@ -18,132 +18,104 @@ Update it whenever the shared server is upgraded or when project requirements ch
 
 ## LAMP Stack Versions
 
-| Component | Version | How to check |
-| --- | --- | --- |
-| Linux / OS release | AlmaLinux 9.8 | `cat /etc/os-release` |
-| Apache HTTP Server | Apache/2.4.68 (cPanel) | `httpd -v` |
-| MariaDB / MySQL Server | mysql  Ver 14.14 | `mysql --version` |
-| PHP CLI | PHP 8.3.32 | `php -v` |
-| PHP-FPM | Not accessible | `php-fpm -v` |
+| Component | Version |
+| --- | --- |
+| Linux / OS release | AlmaLinux 9.8 |
+| Apache HTTP Server | Apache/2.4.68 (cPanel) |
+| MariaDB / MySQL Server | mysql  Ver 14.14 |
+| PHP CLI | PHP 8.3.32 |
+| PHP-FPM | Not accessible |
 
 ## Web Server Details
 
-| Setting | Value | How to check |
-| --- | --- | --- |
-| Apache service name | `httpd` | `systemctl status httpd` |
-| Apache document root | /home2/casamona | `grep -R "DocumentRoot" /etc/httpd/conf /etc/httpd/conf.d` |
-| Apache config test | Not accessible | `apachectl configtest` |
-| Enabled Apache modules | Not accessible | `httpd -M` |
-| Virtual host config path | Not accessible | NA |
-| HTTPS enabled | Yes | NA |
-| SSL certificate provider | Let's Encrypt | NA |
+| Setting | Value |
+| --- | --- |
+| Apache service name | `httpd` |
+| Apache document root | /home2/casamona |
+| Apache config test | Not accessible |
+| Enabled Apache modules | Not accessible |
+| Virtual host config path | Not accessible |
+| HTTPS enabled | Yes |
+| SSL certificate provider | Let's Encrypt |
 
 ## PHP Configuration
 
-| Setting | Value | How to check |
-| --- | --- | --- |
-| Active PHP version | PHP 8.3.32 | `php -v` |
-| PHP config file | /opt/cpanel/ea-php83/root/etc/php.ini | `php --ini` |
-| PHP Server API | Server API => Command Line Interface | `php -i | grep "Server API"` |
-| PHP memory limit | memory_limit => 512M => 512M | `php -i | grep memory_limit` |
-| PHP upload max filesize | upload_max_filesize => 512M => 512M | `php -i | grep upload_max_filesize` |
-| PHP post max size | post_max_size => 516M => 516M | `php -i | grep post_max_size` |
-| PHP max execution time | max_execution_time => 0 => 0 | `php -i | grep max_execution_time` |
-| PHP timezone | date.timezone => America/Mexico_City => America/Mexico_City | `php -i | grep "date.timezone"` |
+| Setting | Value |
+| --- | --- |
+| Active PHP version | PHP 8.3.32 |
+| PHP config file | /opt/cpanel/ea-php83/root/etc/php.ini |
+| PHP Server API | Server API => Command Line Interface |
+| PHP memory limit | memory_limit => 512M => 512M |
+| PHP upload max filesize | upload_max_filesize => 512M => 512M |
+| PHP post max size | post_max_size => 516M => 516M |
+| PHP max execution time | max_execution_time => 0 => 0 |
+| PHP timezone | date.timezone => America/Mexico_City => America/Mexico_City |
 
 ### PHP Extensions
 
 Record required PHP extensions for the project.
 
-| Extension | Installed? | Version / Notes | How to check |
-| --- | --- | --- | --- |
-| curl |  |  | `php -m | grep curl` |
-| gd |  |  | `php -m | grep gd` |
-| intl |  |  | `php -m | grep intl` |
-| mbstring |  |  | `php -m | grep mbstring` |
-| mysqli |  |  | `php -m | grep mysqli` |
-| opcache |  |  | `php -m | grep Zend OPcache` |
-| pdo_mysql |  |  | `php -m | grep pdo_mysql` |
-| xml |  |  | `php -m | grep xml` |
-| zip |  |  | `php -m | grep zip` |
+| Extension | Installed? | Version / Notes |
+| --- | --- | --- |
+| curl | Yes | curl 7.76.1 |
+| gd | Yes | bundled (2.1.0 compatible)/FreeType Version => 2.10.4 |
+| intl | Yes | ICU 67.1 |
+| mbstring | Yes | NA |
+| mysqli | Yes | mysqlnd 8.3.32 |
+| opcache | Yes | PHP 8.3.32 |
+| pdo_mysql | Yes | mysqlnd 8.3.32 |
+| xml | Yes | libxml 2.9.13 |
+| zip | Yes | Zip 3.0 |
 
 ## Database Details
 
-| Setting | Value | How to check |
-| --- | --- | --- |
-| Database server | MariaDB / MySQL | `mysql --version` |
-| Database service name | `mariadb` / `mysqld` | `systemctl status mariadb` |
-| Database host | `localhost` |  |
-| Database port | `3306` |  |
-| Default character set |  | `mysql -e "SHOW VARIABLES LIKE 'character_set_server';"` |
-| Default collation |  | `mysql -e "SHOW VARIABLES LIKE 'collation_server';"` |
+| Setting | Value |
+| --- | --- |
+| Database server | mysql 5.7.44 |
+| Database service name |  `mysqld` |
+| Database host | `localhost` |
+| Database port | `3306` |
+| Default character set | utf8mb3 |
+| Default collation | utf8_unicode_ci |
 
 Do not store database passwords in this file.
 
 ## Development Tools
 
-| Tool | Version | How to check |
-| --- | --- | --- |
-| Git |  | `git --version` |
-| Composer |  | `composer --version` |
-| Node.js |  | `node --version` |
-| npm |  | `npm --version` |
-| Python |  | `python3 --version` |
-| Docker |  | `docker --version` |
-| Docker Compose |  | `docker compose version` |
+| Tool | Version |
+| --- | --- |
+| Git | git 2.48.2 |
+| Composer | Composer 2.6.5 |
+| Node.js | Not available |
+| npm | Not available |
+| Python | python 3.9.25 |
+| Docker | Not available |
+| Docker Compose | Not available |
 
 ## Package Sources
 
-| Source | Enabled? | Notes | How to check |
-| --- | --- | --- | --- |
-| AlmaLinux BaseOS |  |  | `dnf repolist` |
-| AlmaLinux AppStream |  |  | `dnf repolist` |
-| EPEL |  |  | `dnf repolist | grep epel` |
-| Remi PHP repository |  |  | `dnf repolist | grep remi` |
+| Source | Enabled? | Notes |
+| --- | --- | --- |
+| AlmaLinux BaseOS | No |  |
+| AlmaLinux AppStream | No |  |
+| EPEL | No |  |
+| Remi PHP repository | No |  |
 
 ## System Services
 
-| Service | Enabled at boot? | Running? | How to check |
-| --- | --- | --- | --- |
-| httpd |  |  | `systemctl is-enabled httpd && systemctl is-active httpd` |
-| php-fpm |  |  | `systemctl is-enabled php-fpm && systemctl is-active php-fpm` |
-| mariadb / mysqld |  |  | `systemctl is-enabled mariadb && systemctl is-active mariadb` |
-| firewalld |  |  | `systemctl is-enabled firewalld && systemctl is-active firewalld` |
-| sshd |  |  | `systemctl is-enabled sshd && systemctl is-active sshd` |
+| Service | Enabled at boot? | Running? |
+| --- | --- | --- |
+| httpd | Yes | Yes |
+| php-fpm | Yes | Yes |
+| mysqld | Yes | Yes |
+| firewalld | Yes | Yes |
+| sshd | Yes | Yes |
 
 ## Firewall and Ports
 
-| Port / Service | Open? | Purpose | How to check |
-| --- | --- | --- | --- |
-| 22 / SSH |  | Remote login | `firewall-cmd --list-services` |
-| 80 / HTTP |  | Web traffic | `firewall-cmd --list-services` |
-| 443 / HTTPS |  | Secure web traffic | `firewall-cmd --list-services` |
-| 3306 / MySQL |  | Database access, if needed | `firewall-cmd --list-ports` |
-
-## Project Paths
-
-| Path | Value |
-| --- | --- |
-| Web root |  |
-| Application root |  |
-| Logs directory |  |
-| Uploads directory |  |
-| Backup directory |  |
-
-## Student Access Notes
-
-| Item | Value |
-| --- | --- |
-| SSH access method |  |
-| User account naming convention |  |
-| Group used for project files |  |
-| File permission policy |  |
-| Deployment method |  |
-
-Do not store private keys, passwords, API tokens, or personal credentials in this file.
-
-## Change Log
-
-| Date | Change | Updated by |
+| Port / Service | Open? | Purpose |
 | --- | --- | --- |
-| YYYY-MM-DD | Initial environment record created. |  |
+| 22 / SSH | Yes | Remote login |
+| 80 / HTTP | Yes | Web traffic |
+| 443 / HTTPS | Yes | Secure web traffic |
+| 3306 / MySQL | Yes | Database access, if needed |
