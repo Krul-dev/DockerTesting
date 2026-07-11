@@ -22,9 +22,9 @@ Update it whenever the shared server is upgraded or when project requirements ch
 | --- | --- |
 | Linux / OS release | AlmaLinux 9.8 |
 | Apache HTTP Server | Apache/2.4.68 (cPanel) |
-| MariaDB / MySQL Server | mysql  Ver 14.14 |
+| MySQL Server | MySQL 5.7.44-48 |
 | PHP CLI | PHP 8.3.32 |
-| PHP-FPM | Not accessible |
+| PHP-FPM | Managed by hosting provider |
 
 ## Web Server Details
 
@@ -58,11 +58,11 @@ Record required PHP extensions for the project.
 | Extension | Installed? | Version / Notes |
 | --- | --- | --- |
 | curl | Yes | curl 7.76.1 |
-| gd | Yes | bundled (2.1.0 compatible)/FreeType Version => 2.10.4 |
+| gd | Yes | bundled (2.1.0 compatible), FreeType Version 2.10.4 |
 | intl | Yes | ICU 67.1 |
-| mbstring | Yes | NA |
+| mbstring | Yes | Built into PHP 8.3.32 |
 | mysqli | Yes | mysqlnd 8.3.32 |
-| opcache | Yes | PHP 8.3.32 |
+| opcache | Yes | Built into PHP 8.3.32 |
 | pdo_mysql | Yes | mysqlnd 8.3.32 |
 | xml | Yes | libxml 2.9.13 |
 | zip | Yes | Zip 3.0 |
@@ -71,8 +71,7 @@ Record required PHP extensions for the project.
 
 | Setting | Value |
 | --- | --- |
-| Database server | mysql 5.7.44 |
-| Database service name |  `mysqld` |
+| Database server | MySQL 5.7.44-48 |
 | Database host | `localhost` |
 | Database port | `3306` |
 | Default character set | utf8mb3 |
@@ -92,24 +91,15 @@ Do not store database passwords in this file.
 | Docker | Not available |
 | Docker Compose | Not available |
 
-## Package Sources
-
-| Source | Enabled? | Notes |
-| --- | --- | --- |
-| AlmaLinux BaseOS | No |  |
-| AlmaLinux AppStream | No |  |
-| EPEL | No |  |
-| Remi PHP repository | No |  |
-
 ## System Services
 
-| Service | Enabled at boot? | Running? |
-| --- | --- | --- |
-| httpd | Yes | Yes |
-| php-fpm | Yes | Yes |
-| mysqld | Yes | Yes |
-| firewalld | Yes | Yes |
-| sshd | Yes | Yes |
+| Service | Notes |
+| --- | --- |
+| Apache | Managed by hosting provider |
+| PHP-FPM | Managed by hosting provider |
+| MySQL | Managed by hosting provider |
+| Firewall | Managed by hosting provider |
+| SSH | Jailed shell access provided by hosting provider |
 
 ## Firewall and Ports
 
@@ -118,4 +108,4 @@ Do not store database passwords in this file.
 | 22 / SSH | Yes | Remote login |
 | 80 / HTTP | Yes | Web traffic |
 | 443 / HTTPS | Yes | Secure web traffic |
-| 3306 / MySQL | Yes | Database access, if needed |
+| 3306 / MySQL | Yes (TCP) | Remote database access (authentication required) |
