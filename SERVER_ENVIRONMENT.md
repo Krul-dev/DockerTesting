@@ -109,3 +109,10 @@ Do not store database passwords in this file.
 | 80 / HTTP | Yes | Web traffic |
 | 443 / HTTPS | Yes | Secure web traffic |
 | 3306 / MySQL | Yes (TCP) | Remote database access (authentication required) |
+
+## Notes
+
+- The server is a shared HostGator/cPanel environment.
+- Users have jailed SSH access.
+- System services and package management are controlled by the hosting provider.
+- Frontend assets (Node.js/Vite/npm) must be built locally before deployment.
