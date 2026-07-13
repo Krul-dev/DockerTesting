@@ -1,0 +1,60 @@
+[
+    {
+        "Id": "sha256:b992c5717ccc1738b21722b8e2e6c5681e16a53fdc14b5f214098452c0b1750f",
+        "RepoTags": [
+            "kruldevop/my-httpd:0.1.0"
+        ],
+        "RepoDigests": [
+            "kruldevop/my-httpd@sha256:b992c5717ccc1738b21722b8e2e6c5681e16a53fdc14b5f214098452c0b1750f"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-07-13T09:52:55.504006613-06:00",
+        "Config": {
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "HTTPD_PREFIX=/usr/local/apache2",
+                "HTTPD_VERSION=2.4.68",
+                "HTTPD_SHA256=68c74d4df38c26bed4dfbdb8f3baf1eb532f3872357becc1bba5d136f6b63c06",
+                "HTTPD_PATCHES="
+            ],
+            "Cmd": [
+                "httpd-foreground"
+            ],
+            "WorkingDir": "/usr/local/apache2",
+            "StopSignal": "SIGWINCH"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 45246843,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:3edb2192497af6e965b9b7e57dc6dbdce1f3ea721d14a98110419d4ded523298",
+                "sha256:9445c566d9d02277c22d7e06366aa73c33434418dbe55c50ad24a37bcd7d9446",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:2c25aa25054bf2004622ffc360dac009390afb26aee0e1ba21373f2e6631dffb",
+                "sha256:67340aa1c5ffc9519ee1d87e10377b196e48b5a821e1ba7a0c2c08726bef2819",
+                "sha256:279a5f39b89593c82891aed547e810ee3d7cc02b6cdec277a9582f1afcde3734",
+                "sha256:d6be3cf47fef067dec653f8034edd674357c1d4295109c7e6c27511241e1d524"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-07-13T16:01:53.811567185Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:b992c5717ccc1738b21722b8e2e6c5681e16a53fdc14b5f214098452c0b1750f",
+            "size": 856
+        },
+        "Identity": {
+            "Pull": [
+                {
+                    "Repository": "docker.io/kruldevop/my-httpd"
+                }
+            ]
+        }
+    }
+]
